@@ -14,12 +14,14 @@ This configuration for opensips was customized, written and tested for opensips 
     c) Load balancing
     The balancer module is executed, which, according to a given algorithm, 
     balances the load of calls to execute the logic of dwo
-    In addition, sbc acts as a registrar both for its terminals and for interfaces with telecom operators,
-    including when working through nat. Rtp processing is proxied by rtpengine where streams can be written.
+    In addition, sbc acts as a registrar both for its terminals and for interfaces with 
+    telecom operators, including when working through nat. Rtp processing is proxied by
+    rtpengine where streams can be written.
     Opensips database modified tables can be found in the appropriate directory
 ### <b> Install </b>
     a) Download opensips source code
-    b) Prepare postgres database. Create database and data structure including additional tables if required.
+    b) Prepare postgres database. Create database and data structure including
+    additional tables if required.
     c) Prepare one or more media servers for integration with sbc.
     Highlight the login and password for authentication.
     d) Build a docker container using the description from the Dockerfile
