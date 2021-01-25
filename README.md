@@ -27,7 +27,7 @@ This configuration for opensips was customized, written and tested for opensips 
     c) Prepare one or more media servers for integration with sbc.
     Highlight the login and password for authentication.
     d) Build a docker container using the description from the Dockerfile
-## <b> Configure </b>
+### <b> Configure </b>
     Configure opensips and lua cfg configuration files:
     opensips.cfg - opensips global settings
     opensips_modules.cfg - opensips modules settings
