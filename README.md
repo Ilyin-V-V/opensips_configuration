@@ -4,13 +4,15 @@ This configuration for opensips was customized, written and tested for opensips 
 ### <b> Configuration functions</b>
     The configuration serves three main functions of sbc: 
     a) Protection of the network perimeter
-    The answer to the methods of the sip dialogue is possible only after preliminary authentication, 
-    for which the user_id of the packet is compared with the available data in the subscriber sbc table
+    The answer to the methods of the sip dialogue is possible only after preliminary 
+    authentication, for which the user_id of the packet is compared with the 
+    available data in the subscriber sbc table
     To speed up packet processing, data on them is cached in the memcached container
     The packet processing speed is handled by the pike module
     b) Hiding the topology
     The module for hiding the topology topology_hiding is used,
-    which hides the topology of media servers (for example, based on asterisk, freeswitch) behind sbc
+    which hides the topology of media servers (for example, based on asterisk, freeswitch)
+    behind sbc
     c) Load balancing
     The balancer module is executed, which, according to a given algorithm, 
     balances the load of calls to execute the logic of dwo
