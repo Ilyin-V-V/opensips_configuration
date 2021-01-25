@@ -11,6 +11,7 @@ This configuration for opensips was customized, written and tested for opensips 
   b) Hiding the topology
   The module for hiding the topology topology_hiding is used, which hides the topology of media servers (for example, based on asterisk, freeswitch) behind sbc.
   c) Load balancing
-  The balancer module is executed, which, according to a given algorithm, balances the load of calls to execute the logic of dwo
-  In addition, sbc acts as a registrar both for its terminals and for interfaces with telecom operators, including when working through nat. Rtp processing is  proxied by rtpengine where streams can be written.
+  The balancer module is executed, which, according to a given algorithm, balances the load of calls to execute the logic of dwo.
+  
+In addition, sbc acts as a registrar both for its terminals and for interfaces with telecom operators, including when working through nat. Rtp processing is  proxied by rtpengine where streams can be written.
   Opensips database modified tables can be found in the appropriate directory.
