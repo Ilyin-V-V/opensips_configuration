@@ -1,0 +1,42 @@
+version: "3.7"
+services:
+  opensips:
+    image: opensips-2.4
+    hostname: node
+#Развернуть стек в рой
+    deploy:
+     labels:
+      sbc.profintel.ru: "Opensips service version 2.4_2"
+     mode: replicated
+     replicas: 2
+     endpoint_mode: vip  
+     resources:
+      limits:
+       cpus: '0.90'
+       memory: 256M
+      reservations:
+       cpus: '0.80'
+       memory: 256M
+     restart_policy:
+      condition: any
+     update_config:
+      parallelism: 1
+      order: stop-first
+    volumes:
+      - "/var/log/opensips/:/var/log/opensips/"
+      - "/etc/opensips/:/usr/local/etc/opensips/extensions/"
+    working_dir: /usr/local/etc/opensips/
+    ports:
+     - target: 5060
+       published: 5060
+       protocol: udp
+       mode: ingress
+     - target: 5060
+       published: 5060
+       protocol: tcp
+       mode: ingress
+     - target: 8008
+       published: 8008
+       protocol: tcp
+       mode: ingress
+

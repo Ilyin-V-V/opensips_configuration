@@ -1,0 +1,20 @@
+version: "2.2"
+services:
+  opensips-2.4:
+#Если нужно собрать из Dockerfile
+   #build:
+    #context: /usr/local/src/Dockerfile/
+    image: opensips-2.4
+#Имя контейнера 
+    container_name: opensips-2.4_2
+#Ресурсы только версия 2.2
+    cpus: 0.8
+    mem_limit: 256m
+    mem_reservation: 256m
+    hostname: node1
+    restart: always
+    volumes:
+      - "/var/log/opensips/:/var/log/opensips/"
+      - "/etc/opensips/:/usr/local/etc/opensips/extensions/"
+    working_dir: /usr/local/etc/opensips/
+    network_mode: "host"

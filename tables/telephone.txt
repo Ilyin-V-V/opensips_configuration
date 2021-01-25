@@ -1,0 +1,18 @@
+CREATE TABLE telephone (
+    id serial,
+    service_id integer,
+    phone character varying(20)
+);
+
+
+ALTER TABLE telephone OWNER TO postgres;
+
+REVOKE ALL ON TABLE telephone FROM PUBLIC;
+REVOKE ALL ON TABLE telephone FROM postgres;
+GRANT ALL ON TABLE telephone TO postgres;
+GRANT ALL ON TABLE telephone TO sbcusersips;
+
+REVOKE ALL ON TABLE telephone_id_seq FROM PUBLIC;
+REVOKE ALL ON TABLE telephone_id_seq FROM postgres;
+GRANT ALL ON TABLE telephone_id_seq TO postgres;
+GRANT ALL ON TABLE telephone_id_seq TO sbcusersips;

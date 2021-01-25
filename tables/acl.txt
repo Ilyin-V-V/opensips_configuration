@@ -1,0 +1,18 @@
+CREATE TABLE acl (
+    id serial,
+    username character varying(64) DEFAULT ''::character NOT NULL,
+    ip_address character varying(64) DEFAULT ''::character NOT NULL
+);
+
+
+ALTER TABLE acl OWNER TO postgres;
+
+REVOKE ALL ON TABLE acl FROM PUBLIC;
+REVOKE ALL ON TABLE acl FROM postgres;
+GRANT ALL ON TABLE acl TO postgres;
+GRANT ALL ON TABLE acl TO sbcusersips;
+
+REVOKE ALL ON TABLE acl_id_seq FROM PUBLIC;
+REVOKE ALL ON TABLE acl_id_seq FROM postgres;
+GRANT ALL ON TABLE acl_id_seq TO postgres;
+GRANT ALL ON TABLE acl_id_seq TO sbcusersips;

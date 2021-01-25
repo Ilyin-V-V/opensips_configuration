@@ -1,0 +1,22 @@
+CREATE TABLE alien_number (
+        id serial,
+        phone_number character varying(64) NOT NULL,
+        spec integer DEFAULT 1 NOT NULL,
+        city integer DEFAULT 1 NOT NULL,
+        russia integer DEFAULT 1 NOT NULL,
+        world integer DEFAULT 1 NOT NULL
+);
+
+ALTER TABLE alien_number OWNER TO postgres;
+
+REVOKE ALL ON TABLE alien_number FROM PUBLIC;
+REVOKE ALL ON TABLE alien_number FROM postgres;
+GRANT ALL ON TABLE alien_number TO postgres;
+GRANT ALL ON TABLE alien_number TO sbcusersips;
+
+ALTER TABLE alien_number_id_seq OWNER TO postgres;
+
+REVOKE ALL ON TABLE alien_number_id_seq FROM PUBLIC;
+REVOKE ALL ON TABLE alien_number_id_seq FROM postgres;
+GRANT ALL ON TABLE alien_number_id_seq TO postgres;
+GRANT ALL ON TABLE alien_number_id_seq TO sbcusersips;

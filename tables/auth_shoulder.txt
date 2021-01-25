@@ -1,0 +1,19 @@
+CREATE TABLE auth_shoulder (
+    id serial,
+    callid character varying(255) DEFAULT ''::character varying NOT NULL
+);
+
+
+ALTER TABLE auth_shoulder OWNER TO postgres;
+
+REVOKE ALL ON TABLE auth_shoulder FROM PUBLIC;
+REVOKE ALL ON TABLE auth_shoulder FROM postgres;
+GRANT ALL ON TABLE auth_shoulder TO postgres;
+GRANT ALL ON TABLE auth_shoulder TO sbcusersips;
+
+ALTER TABLE auth_shoulder_id_seq OWNER TO postgres;
+
+REVOKE ALL ON TABLE auth_shoulder_id_seq FROM PUBLIC;
+REVOKE ALL ON TABLE auth_shoulder_id_seq FROM postgres;
+GRANT ALL ON TABLE auth_shoulder_id_seq TO postgres;
+GRANT ALL ON TABLE auth_shoulder_id_seq TO sbcusersips;

@@ -1,0 +1,89 @@
+# id -> osicpsconsolerc
+#===================================================================================================================#
+#======================== Файл конфигурации для инструментов управления OPENSIPS ===================================#
+#======================== Здесь можно установить переменные, используемые в настройках =============================#
+#======================== opensipsctl и opensipsdbctl скриптов =====================================================#
+#===================================================================================================================#
+
+# Наш SIP домен
+SIP_DOMAIN=host.domain
+
+# Директория песочницы
+# $CHROOT_DIR="/path/to/chrooted/directory"
+
+# Тип базы даных работающей с OPENSIPS
+DBENGINE=PGSQL
+
+# Порт базы данных PostgreSQL=5432
+DBPORT=5432
+
+# Имя хоста с базой данных
+DBHOST=dbhost
+
+# Имя базы данных
+DBNAME=dbname
+
+# Пользователь для r.w из базы
+DBRWUSER=dbrwuser
+
+# Пароль пользователя для r.w из базы
+DBRWPW=password
+
+# Супер пользователь базы данных
+DBROOTUSER="postgres"
+
+# Какие дополнительные таблицы будем устанавливать, и определение как устанавливать таблицы:
+# ask - интерактивная установка
+# yes - устанавливать
+# no - не устанавливать
+
+# Установить таблицы для дополнительных модулей
+INSTALL_EXTRA_TABLES=ask
+
+# Установить таблицы для модулей определения местоположения
+INSTALL_PRESENCE_TABLES=ask
+
+# Определение, какие таблицы - стандартные, дополнительные
+#
+# Стандартные модули
+STANDARD_MODULES="standard acc domain group permissions registrar usrloc msilo alias_db uri_db speeddial avpops auth_db dialog dispatcher dialplan drouting nathelper load_balancer"
+
+# Дополнительные модули
+EXTRA_MODULES="imc cpl siptrace domainpolicy carrierroute userblacklist b2b registrant call_center fraud_detection cachedb_sql"
+
+# Тип используемых псевдонимов
+# DB - псевдонимы базы данных; UL - usrloc
+# default: none
+ALIASES_TYPE="DB"
+
+# Принмать команды коннектором - MI_CONNECTOR control engine: FIFO, UNIXSOCK, UDP, XMLRPC
+MI_CONNECTOR=FIFO:/tmp/opensips_fifo
+
+# Альтернативно, в т.ч с хост машин
+# MI_CONNECTOR=UNIXSOCK:/tmp/opensips.sock
+# MI_CONNECTOR=UDP:192.168.2.133:8000
+# MI_CONNECTOR=XMLRPC:192.168.2.133:8000
+
+# Проверять имена ACL; default on (1); off (0)
+VERIFY_ACL=1
+
+# Если VERIFY_ACL установлена, принимать имена из списка
+# ACL_GROUPS="local ld int voicemail free-pstn"
+
+# Включить дебаг - default '0'
+VERBOSE=0
+
+# Пароли пользователей в таблице
+# do (1) or don't (0) store plaintext passwords
+# in the subscriber table - default '1'
+STORE_PLAINTEXT_PW=0
+
+# Не отображать вывод в консоль
+# NOHLPRINT=1
+
+# OPENSIPS pid файл
+PID_FILE=/var/run/opensips.pid
+
+# Опции старта процессов OPENSIPS
+# пример: start opensips with 64MB share memory: STARTOPTIONS="-m 64"
+# STARTOPTIONS=

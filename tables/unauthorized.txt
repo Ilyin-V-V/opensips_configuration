@@ -1,0 +1,15 @@
+CREATE TABLE unauthorized (
+    id serial,
+    ip_address character varying(64) DEFAULT ''::character NOT NULL,
+    realm character varying(128) DEFAULT ''::character,
+    user_authorized character varying(64) DEFAULT ''::character NOT NULL,
+    user_password character varying(128) DEFAULT ''::character NOT NULL
+);
+
+
+ALTER TABLE unauthorized OWNER TO postgres;
+
+REVOKE ALL ON TABLE unauthorized FROM PUBLIC;
+REVOKE ALL ON TABLE unauthorized FROM postgres;
+GRANT ALL ON TABLE unauthorized TO postgres;
+GRANT ALL ON TABLE unauthorized TO sbcusersips;

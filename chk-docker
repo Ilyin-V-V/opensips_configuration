@@ -1,0 +1,2 @@
+#!/bin/bash
+docker exec -i -t opensips-2.4_1 bash /usr/local/etc/opensips/extensions/chk
