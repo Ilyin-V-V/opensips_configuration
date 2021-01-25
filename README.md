@@ -1,6 +1,6 @@
 ![Screenshot](schema.png)
 ### <b> About project </b>
-This configuration for opensips was customized, written and tested for opensips version 2 and had serious memory leak issues due to lua. The leak issue has been resolved in opensips version 3.
+This configuration for opensips was customized, written and tested for opensips version 2 and had serious memory leak issues due to lua. The leak issue has been resolved in opensips version 3
 ### <b> Configuration functions</b>
     The configuration serves three main functions of sbc: 
     a) Protection of the network perimeter
